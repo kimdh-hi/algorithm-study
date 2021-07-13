@@ -26,7 +26,7 @@ public class KthLargest {
         for (int a : arr) {
             pq.offer(a); // 순서대로 큐에 삽입 (heapify)
             if (pq.size() > k) { // k개 만큼의 heap만 유지
-                pq.poll();
+                pq.poll(); //
             }
         }
         return pq.peek(); // min-heap의 루트노드 값이 k번째 큰 값이 됨
