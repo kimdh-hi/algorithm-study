@@ -6,7 +6,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 /**
- * 2진 트리구조를 레벨 단위로 나누기
+ * 2진 트리구조를 레벨 단위로 나누기 (bfs)
  */
 public class LevelOrderOfBinaryTree {
 
