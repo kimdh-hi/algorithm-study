@@ -15,14 +15,14 @@ import java.util.Map;
 public class TwoSum {
 
     public static void main(String[] args) {
-        int target = 16;
-        int[] t1 = new int[]{2, 8, 11, 14};
+        int target = 20;
+        int[] t1 = new int[]{1, 6, 11, 14};
 
         TwoSum ts = new TwoSum();
         int[] result = ts.solve(t1, target);
 
         for(int r : result) {
-            System.out.println(r);
+            System.out.print(r + " ");
         }
     }
 
