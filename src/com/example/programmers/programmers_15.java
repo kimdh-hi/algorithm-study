@@ -1,9 +1,17 @@
-package com.example;
+package com.example.programmers;
 
+import com.example.Test;
+
+import java.util.ArrayList;
 import java.util.*;
-import java.util.stream.Stream;
 
-public class Test {
+/**
+ * https://programmers.co.kr/learn/courses/30/lessons/42888
+ * 2019 KAKAO BLIND RECRUITMENT
+ * 오픈채팅방
+ */
+
+public class programmers_15 {
     public static void main(String[] args) {
         String[] t1 = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
 
@@ -13,7 +21,6 @@ public class Test {
             System.out.println(s);
         }
     }
-
     public String[] solution(String[] record) {
 
         List<String> answer = new ArrayList<>();
