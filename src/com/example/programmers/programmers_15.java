@@ -15,7 +15,7 @@ public class programmers_15 {
     public static void main(String[] args) {
         String[] t1 = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
 
-        Test a = new Test();
+        programmers_15 a = new programmers_15();
         String[] solution = a.solution(t1);
         for (String s : solution) {
             System.out.println(s);
