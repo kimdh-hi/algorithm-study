@@ -6,65 +6,32 @@ import java.util.*;
 
 public class Test {
 
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer st;
+    static int[][] dp;
+    static int N, K;
+
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
 
-        int[] parent = new int[n+1];
-        for (int i=0;i<n+1;i++) {
-            parent[i] = i;
-        }
-
-        Queue<Node> pq = new PriorityQueue<>();
-        for (int i=0;i<m;i++) {
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        dp = new int[N + 1][K + 1];
+        int w, v;
+        for (int i = 1; i <= N; i++) {
             st = new StringTokenizer(br.readLine());
-            Node node = new Node(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
-            pq.offer(node);
-        }
-
-        int minSum = 0;
-        while (!pq.isEmpty()) {
-            Node node = pq.poll();
-            int fromParent = find(parent, node.from);
-            int toParent = find(parent, node.to);
-            if (fromParent != toParent) {
-                union(parent, fromParent, toParent);
-                minSum += node.weight;
+            w = Integer.parseInt(st.nextToken());
+            v = Integer.parseInt(st.nextToken());
+            for (int j = 1; j <= K; j++) {
+                dp[i][j] = j < w ? dp[i-1][j] : Math.max(v + dp[i - 1][j - w], dp[i - 1][j]);
             }
         }
-        System.out.println(minSum);
-    }
-
-    public static int find(int[] parent, int a) {
-        if (a == parent[a]) return a;
-        return parent[a] = find(parent, parent[a]);
-    }
-    public static void union(int[] parent, int a, int b) {
-        a = find(parent, a);
-        b = find(parent, b);
-
-        if (a != b) {
-            if (a < b) parent[b] = a;
-            else parent[a] = b;
+        for (int[] ints : dp) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
+            }
+            System.out.println();
         }
-    }
-
-    public static class Node implements Comparable<Node>{
-        private int from;
-        private int to;
-        private int weight;
-
-        public Node(int from, int to, int weight) {
-            this.from = from;
-            this.to = to;
-            this.weight = weight;
-        }
-
-        @Override
-        public int compareTo(Node node) {
-            return weight - node.weight;
-        }
+        System.out.println(dp[N][K]);
     }
 }
