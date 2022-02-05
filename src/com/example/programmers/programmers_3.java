@@ -1,6 +1,5 @@
 package com.example.programmers;
 
-import com.example.Test;
 /**
  * 크레인 인형뽑기
  *

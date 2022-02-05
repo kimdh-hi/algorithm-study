@@ -1,7 +1,5 @@
 package com.example.programmers;
 
-import com.example.Test;
-
 public class programmers_8 {
 
     public static void main(String[] args) {

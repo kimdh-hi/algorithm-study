@@ -1,5 +1,4 @@
 package com.example.programmers;
-import com.example.Test;
 
 /**
  * https://programmers.co.kr/learn/courses/30/lessons/72411

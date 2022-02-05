@@ -1,7 +1,5 @@
 package com.example.programmers;
 
-import com.example.Test;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
