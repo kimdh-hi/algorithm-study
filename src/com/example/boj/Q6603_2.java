@@ -3,12 +3,12 @@ package com.example.boj;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Q6603 {
-
+public class Q6603_2 {
     static int k;
     static int[] nums;
     static boolean[] check;
     static BufferedWriter bw;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -33,15 +33,15 @@ public class Q6603 {
 
     static void dfs(int depth, int start) throws IOException {
         if (depth == 6) {
-            for (int i=0;i<k;i++) {
-                if (check[i]){
+            for(int i=0;i<k;i++) {
+                if (check[i]) {
                     bw.write(nums[i] + " ");
                 }
             }
             bw.write("\n");
         }
 
-        for  (int i=start; i<k; i++) {
+        for (int i=start; i<k; i++) {
             check[i] = true;
             dfs(depth+1, i+1);
             check[i] = false;
