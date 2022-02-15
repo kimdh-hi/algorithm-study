@@ -4,7 +4,6 @@ package com.example.programmers;
 // 더 맵게
 
 import java.util.*;
-
 public class programmers_26 {
 
     public int solution(int[] scoville, int K) {

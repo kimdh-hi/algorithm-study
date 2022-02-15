@@ -18,6 +18,8 @@ public class Q7569 {
         m = Integer.parseInt(st.nextToken());
         h = Integer.parseInt(st.nextToken());
 
+
+
         for (int i=0;i<m;i++) {
 
         }
